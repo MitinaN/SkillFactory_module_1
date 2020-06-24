@@ -368,6 +368,9 @@ answers['19'] = '5. 2015 +'
 
 data.groupby(by = ['release_year'])['revenue'].sum().sort_values(ascending=False).head(1)
 
+profit_df = data.pivot_table(values = 'revenue', columns = 'release_year', aggfunc = 'sum')
+profit_df.loc['revenue'].max()
+
 
 # # 20. Какой самый прибыльный год для студии Warner Bros?
 
